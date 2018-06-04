@@ -41,17 +41,18 @@ namespace OnlineShop.Data.Entities
         public int? ViewCount { get; set; }
 
         [StringLength(255)]
-        public string Tabs { get; set; }
+        public string Tags { get; set; }
 
         [StringLength(255)]
         public string Unit { get; set; }
 
         public Status Status { get; set; }
+
         public DateTime DateCreated { get; set; }
         public DateTime DateModified { get; set; }
 
         [StringLength(255)]
-        public string PageTitle { get; set; }
+        public string SeoPageTitle { get; set; }
 
         [StringLength(255)]
         public string SeoAlias { get; set; }

@@ -2,7 +2,7 @@
 {
     public interface IHasSeoMetaData
     {
-        string PageTitle { get; set; }
+        string SeoPageTitle { get; set; }
 
         string SeoAlias { get; set; }
 
