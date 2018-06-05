@@ -11,11 +11,35 @@ namespace OnlineShop.Data.Entities
     [Table("ProductCategories")]
     public class ProductCategory : DomainEntity<int>, IDateTracking, IHasSeoMetaData, ISwitchable, ISortable
     {
+        #region Constructure
+
         public ProductCategory()
         {
             Products = new List<Product>();
         }
 
+        /// <summary>
+        /// Constructure for AutoMapper mapping
+        /// </summary>
+        /// <param name="name"></param>
+        public ProductCategory(string name, string decscription, int? parentId, int? homeOrder, string image, bool? homeFlag, 
+            string seoPageTitle, string seoAlias, string seoKeywords, string seoDescription, Status status, int sortOrder)
+        {
+            Name = name;
+            Description = decscription;
+            ParentId = parentId;
+            HomeOrder = homeOrder;
+            Image = image;
+            HomeFlag = homeFlag;
+            SeoPageTitle = seoPageTitle;
+            SeoAlias = seoAlias;
+            SeoKeywords = seoKeywords;
+            SeoDescription = seoDescription;
+            Status = status;
+            SortOrder = sortOrder;
+        }
+
+        #endregion
         [StringLength(255)]
         [Required]
         public string Name { get; set; }
