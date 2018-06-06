@@ -3,7 +3,7 @@ using System.Linq;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using OnlineShop.Application.Interfaces;
-using OnlineShop.Application.ViewModels;
+using OnlineShop.Application.ViewModels.Product;
 using OnlineShop.Data.Entities;
 using OnlineShop.Infrastructure.Interfaces;
 

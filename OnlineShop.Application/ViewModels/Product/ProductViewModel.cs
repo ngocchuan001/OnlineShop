@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using OnlineShop.Data.Entities;
 using OnlineShop.Data.Enums;
 
-namespace OnlineShop.Application.ViewModels
+namespace OnlineShop.Application.ViewModels.Product
 {
     public class ProductViewModel
     {

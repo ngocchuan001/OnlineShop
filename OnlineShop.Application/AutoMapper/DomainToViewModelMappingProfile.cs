@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using OnlineShop.Application.ViewModels;
+using OnlineShop.Application.ViewModels.Product;
 using OnlineShop.Data.Entities;
 
 namespace OnlineShop.Application.AutoMapper

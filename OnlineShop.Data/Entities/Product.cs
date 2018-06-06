@@ -11,6 +11,35 @@ namespace OnlineShop.Data.Entities
     [Table("Products")]
     public class Product : DomainEntity<int>, ISwitchable, IDateTracking, IHasSeoMetaData
     {
+        #region COnstructure
+        public Product()
+        { }
+
+        public Product(string name, int categoryId, string image, decimal price, decimal? promotionPrice, decimal originalPrice, string description, 
+            string content, bool? homeFlag, bool? hotFlag, int? viewCount, string tags, string unit, Status status, 
+            string seoPageTitle, string seoKeywords, string seoAlias, string seoDescription)
+        {
+            Name = name;
+            CategoryId = categoryId;
+            Image = image;
+            Price = price;
+            PromotionPrice = promotionPrice;
+            OriginalPrice = originalPrice;
+            Description = description;
+            Content = content;
+            HomeFlag = homeFlag;
+            HotFlag = hotFlag;
+            ViewCount = viewCount;
+            Tags = tags;
+            Unit = unit;
+            Status = status;
+            SeoPageTitle = seoPageTitle;
+            SeoKeywords = seoKeywords;
+            SeoAlias = seoAlias;
+            SeoDescription = seoDescription;
+        }
+        #endregion
+
         [StringLength(255)]
         [Required]
         public string Name { get; set; }

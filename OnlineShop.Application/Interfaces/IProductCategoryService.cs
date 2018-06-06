@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using OnlineShop.Application.ViewModels;
+using OnlineShop.Application.ViewModels.Product;
 
 namespace OnlineShop.Application.Interfaces
 {

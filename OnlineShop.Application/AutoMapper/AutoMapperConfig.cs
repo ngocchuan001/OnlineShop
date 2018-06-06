@@ -4,7 +4,7 @@ namespace OnlineShop.Application.AutoMapper
 {
     public class AutoMapperConfig
     {
-        public static MapperConfiguration Configuration()
+        public static MapperConfiguration RegisterMappings()
         {
             return new MapperConfiguration(config =>
             {
