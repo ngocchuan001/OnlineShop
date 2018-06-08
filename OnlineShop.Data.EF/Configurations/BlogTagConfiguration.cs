@@ -5,11 +5,12 @@ using OnlineShop.Data.Entities;
 
 namespace OnlineShop.Data.EF.Configurations
 {
-    public class BlogTagConfiguration : ModelBuilderExtensions.DbEntityConfiguration<BlogTag>
+    public class BlogTagConfiguration : DbEntityConfiguration<BlogTag>
     {
         public override void Configure(EntityTypeBuilder<BlogTag> entity)
         {
-            entity.Property(n => n.TagId).HasMaxLength(50).IsRequired().HasColumnType("varchar(50)");
+            entity.Property(n => n.TagId).HasMaxLength(50).IsRequired()
+                .HasColumnType("varchar(50)");
         }
     }
 }

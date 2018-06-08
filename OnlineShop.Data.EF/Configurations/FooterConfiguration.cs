@@ -5,7 +5,7 @@ using OnlineShop.Data.Entities;
 
 namespace OnlineShop.Data.EF.Configurations
 {
-    public class FooterConfiguration : ModelBuilderExtensions.DbEntityConfiguration<Footer>
+    public class FooterConfiguration : DbEntityConfiguration<Footer>
     {
         public override void Configure(EntityTypeBuilder<Footer> entity)
         {

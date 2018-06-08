@@ -10,10 +10,10 @@ namespace OnlineShop.Data.EF.Extensions
         {
             modelBuilder.Entity<TEntity>(entityConfiguration.Configure);
         }
+    }
 
-        public  abstract class DbEntityConfiguration<TEntity> where TEntity : class
-        {
-            public abstract void Configure(EntityTypeBuilder<TEntity> entity);
-        }
+    public abstract class DbEntityConfiguration<TEntity> where TEntity : class
+    {
+        public abstract void Configure(EntityTypeBuilder<TEntity> entity);
     }
 }

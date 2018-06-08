@@ -4,12 +4,13 @@ using OnlineShop.Infrastructure.SharedKernel;
 
 namespace OnlineShop.Data.Entities
 {
+    [Table("ProductTags")]
     public class ProductTag : DomainEntity<int>
     {
         public int ProductId { get; set; }
 
         [StringLength(50)]
-        [Column(TypeName = "varchar")]
+        [Column(TypeName = "varchar(50)")]
         public string TagId { get; set; }
 
         [ForeignKey("ProductId")]

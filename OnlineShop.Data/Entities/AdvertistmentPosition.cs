@@ -13,6 +13,7 @@ namespace OnlineShop.Data.Entities
             Advertistments = new List<Advertistment>();
         }
 
+        [Required]
         [StringLength(20)]
         public string PageId { get; set; }
 

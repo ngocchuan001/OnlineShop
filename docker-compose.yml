@@ -1,8 +1,0 @@
-version: '3.4'
-
-services:
-  onlineshop.presentation:
-    image: ${DOCKER_REGISTRY}onlineshoppresentation
-    build:
-      context: .
-      dockerfile: OnlineShop.Presentation\Dockerfile

@@ -4,7 +4,7 @@ using OnlineShop.Data.Entities;
 
 namespace OnlineShop.Data.EF.Configurations
 {
-    public class SystemConfigConfiguration : ModelBuilderExtensions.DbEntityConfiguration<SystemConfig>
+    public class SystemConfigConfiguration : DbEntityConfiguration<SystemConfig>
     {
         public override void Configure(EntityTypeBuilder<SystemConfig> entity)
         {

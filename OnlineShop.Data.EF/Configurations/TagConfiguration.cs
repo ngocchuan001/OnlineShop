@@ -5,7 +5,7 @@ using OnlineShop.Data.Entities;
 
 namespace OnlineShop.Data.EF.Configurations
 {
-    public class TagConfiguration : ModelBuilderExtensions.DbEntityConfiguration<Tag>
+    public class TagConfiguration : DbEntityConfiguration<Tag>
     {
         public override void Configure(EntityTypeBuilder<Tag> entity)
         {

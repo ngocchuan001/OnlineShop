@@ -4,7 +4,7 @@ using OnlineShop.Data.Entities;
 
 namespace OnlineShop.Data.EF.Configurations
 {
-    public class AdvertistmentPositionConfiguration : ModelBuilderExtensions.DbEntityConfiguration<AdvertistmentPosition>
+    public class AdvertistmentPositionConfiguration : DbEntityConfiguration<AdvertistmentPosition>
     {
         public override void Configure(EntityTypeBuilder<AdvertistmentPosition> entity)
         {

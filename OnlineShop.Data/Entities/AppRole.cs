@@ -13,6 +13,11 @@ namespace OnlineShop.Data.Entities
 
         }
 
+        public AppRole(string name, string description) : base(name)
+        {
+            this.Description = description;
+        }
+
         [StringLength(255)]
         public string Description { get; set; }
     }

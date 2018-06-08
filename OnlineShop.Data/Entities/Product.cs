@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -37,6 +38,36 @@ namespace OnlineShop.Data.Entities
             SeoKeywords = seoKeywords;
             SeoAlias = seoAlias;
             SeoDescription = seoDescription;
+            ProductTags = new List<ProductTag>();
+        }
+
+        public Product(int id, string name, int categoryId, string thumbnailImage,
+             decimal price, decimal originalPrice, decimal? promotionPrice,
+             string description, string content, bool? homeFlag, bool? hotFlag,
+             string tags, string unit, Status status, string seoPageTitle,
+             string seoAlias, string seoMetaKeyword,
+             string seoMetaDescription)
+        {
+            Id = id;
+            Name = name;
+            CategoryId = categoryId;
+            Image = thumbnailImage;
+            Price = price;
+            OriginalPrice = originalPrice;
+            PromotionPrice = promotionPrice;
+            Description = description;
+            Content = content;
+            HomeFlag = homeFlag;
+            HotFlag = hotFlag;
+            Tags = tags;
+            Unit = unit;
+            Status = status;
+            SeoPageTitle = seoPageTitle;
+            SeoAlias = seoAlias;
+            SeoKeywords = seoMetaKeyword;
+            SeoDescription = seoMetaDescription;
+            ProductTags = new List<ProductTag>();
+
         }
         #endregion
 
@@ -94,5 +125,7 @@ namespace OnlineShop.Data.Entities
 
         [ForeignKey("CategoryId")]
         public virtual  ProductCategory ProductCategory { get; set; }
+
+        public virtual ICollection<ProductTag> ProductTags { set; get; }
     }
 }

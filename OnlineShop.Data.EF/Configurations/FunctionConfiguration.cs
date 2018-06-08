@@ -5,7 +5,7 @@ using OnlineShop.Data.Entities;
 
 namespace OnlineShop.Data.EF.Configurations
 {
-    public class FunctionConfiguration : ModelBuilderExtensions.DbEntityConfiguration<Function>
+    public class FunctionConfiguration : DbEntityConfiguration<Function>
     {
         public override void Configure(EntityTypeBuilder<Function> entity)
         {

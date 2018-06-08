@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -18,6 +12,8 @@ using OnlineShop.Application.Interfaces;
 using OnlineShop.Data.EF;
 using OnlineShop.Data.Entities;
 using OnlineShop.Infrastructure.Interfaces;
+using OnlineShop.Presentation.Authorization;
+using System;
 
 namespace OnlineShop.Presentation
 {
@@ -33,18 +29,15 @@ namespace OnlineShop.Presentation
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.Configure<CookiePolicyOptions>(options =>
-            //{
-            //    // This lambda determines whether user consent for non-essential cookies is needed for a given request.
-            //    options.CheckConsentNeeded = context => true;
-            //    options.MinimumSameSitePolicy = SameSiteMode.None;
-            //});
-
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection"), o=>o.MigrationsAssembly("OnlineShop.Data.EF")));
-            services.AddDefaultIdentity<AppUser>()
-                .AddEntityFrameworkStores<AppDbContext>();
+                    Configuration.GetConnectionString("DefaultConnection"), 
+                    o => o.MigrationsAssembly("OnlineShop.Data.EF")));
+            services.AddIdentity<AppUser, AppRole>()
+                .AddEntityFrameworkStores<AppDbContext>()
+                .AddDefaultTokenProviders();
+
+            services.AddMemoryCache();
 
             // Configure Identity
             services.Configure<IdentityOptions>(options =>
@@ -71,11 +64,12 @@ namespace OnlineShop.Presentation
             services.AddSingleton(Mapper.Configuration);
             services.AddScoped<IMapper>(sp =>
                 new Mapper(sp.GetRequiredService<AutoMapper.IConfigurationProvider>(), sp.GetService));
-            services.AddTransient<DbInitializer, DbInitializer>();
+            services.AddTransient<DbInitializer>();
 
             services.AddTransient(typeof(IUnitOfWork), typeof(EFUnitOfWork));
             services.AddTransient(typeof(IRepository<,>), typeof(EFRepository<,>));
             services.AddTransient<IProductCategoryService, ProductCategoryService>();
+            services.AddTransient<IAuthorizationHandler, BaseResourceAuthorizationHandler>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

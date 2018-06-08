@@ -4,7 +4,7 @@ using OnlineShop.Data.Entities;
 
 namespace OnlineShop.Data.EF.Configurations
 {
-    public class PageConfiguration : ModelBuilderExtensions.DbEntityConfiguration<Page>
+    public class PageConfiguration : DbEntityConfiguration<Page>
     {
         public override void Configure(EntityTypeBuilder<Page> entity)
         {

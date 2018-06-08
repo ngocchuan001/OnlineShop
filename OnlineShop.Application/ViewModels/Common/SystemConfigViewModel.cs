@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OnlineShop.Data.Enums;
+using System;
 using System.Collections.Generic;
 using System.Text;
 

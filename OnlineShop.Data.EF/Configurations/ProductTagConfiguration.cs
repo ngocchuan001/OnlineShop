@@ -8,7 +8,7 @@ using OnlineShop.Data.Entities;
 
 namespace OnlineShop.Data.EF.Configurations
 {
-    public class ProductTagConfiguration : ModelBuilderExtensions.DbEntityConfiguration<ProductTag>
+    public class ProductTagConfiguration : DbEntityConfiguration<ProductTag>
     {
         public override void Configure(EntityTypeBuilder<ProductTag> entity)
         {

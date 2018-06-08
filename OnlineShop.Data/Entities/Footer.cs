@@ -4,7 +4,7 @@ using OnlineShop.Infrastructure.SharedKernel;
 
 namespace OnlineShop.Data.Entities
 {
-    [Table("Footer")]
+    [Table("Footers")]
     public class Footer : DomainEntity<string>
     {
         [Required]

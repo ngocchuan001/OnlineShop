@@ -4,7 +4,7 @@ using OnlineShop.Data.Entities;
 
 namespace OnlineShop.Data.EF.Configurations
 {
-    public class ContactDetailConfiguration : ModelBuilderExtensions.DbEntityConfiguration<Contact>
+    public class ContactDetailConfiguration : DbEntityConfiguration<Contact>
     {
         public override void Configure(EntityTypeBuilder<Contact> entity)
         {
