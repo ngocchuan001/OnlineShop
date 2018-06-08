@@ -38,6 +38,7 @@ namespace OnlineShop.Data.EF
 
             #endregion
 
+            builder.AddConfiguration(new AdvertistmentPageConfiguration());
             builder.AddConfiguration(new AdvertistmentPositionConfiguration());
             builder.AddConfiguration(new BlogTagConfiguration());
             builder.AddConfiguration(new ContactDetailConfiguration());
@@ -48,7 +49,7 @@ namespace OnlineShop.Data.EF
             builder.AddConfiguration(new SystemConfigConfiguration());
             builder.AddConfiguration(new TagConfiguration());
 
-            OnModelCreating(builder);
+            //OnModelCreating(builder);
         }
 
         public override int SaveChanges()
